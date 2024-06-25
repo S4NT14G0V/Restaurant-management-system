@@ -1,7 +1,12 @@
 import React from 'react'
-export default function Navbar({title}) {
+import { useNavigate } from 'react-router-dom';
+
+export default function Navbar() {
+
+  let navigate = useNavigate();
+
   return (
-    <div>
+    
     <header className="navbar">
       <section className="navbar-companyinfo">
         <img src="/images/logo.svg" alt="logo" className="navbar-companyinfo-logo" />
@@ -12,11 +17,11 @@ export default function Navbar({title}) {
           <h2>Argenis Medina Morales</h2>
           <h3>Administrador</h3>
         </div>
-        <button className="navbar-userinfo-logout" title="Botón para Cerrar Sesión">
+        <button className="navbar-userinfo-logout" title="Botón para Cerrar Sesión" onClick={() => navigate(`/home`)}>
           <img src="/images/salir.svg" alt="btn-salir" className="logout-icon" />
         </button>
       </section>
     </header>
-  </div>
+  
   )
 }
