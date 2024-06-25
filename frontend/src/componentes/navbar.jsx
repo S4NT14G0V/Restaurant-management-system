@@ -1,12 +1,10 @@
 import React from 'react'
-import logo from '../images/logo.svg';
-import salir from '../images/salir.svg';
 export default function Navbar({title}) {
   return (
     <div>
     <header className="navbar">
       <section className="navbar-companyinfo">
-        <img src={logo} alt="logo" className="navbar-companyinfo-logo" />
+        <img src="/images/logo.svg" alt="logo" className="navbar-companyinfo-logo" />
         <h1>El Palacio del Vandolero</h1>
       </section>
       <section className="navbar-userinfo">
@@ -15,7 +13,7 @@ export default function Navbar({title}) {
           <h3>Administrador</h3>
         </div>
         <button className="navbar-userinfo-logout" title="Botón para Cerrar Sesión">
-          <img src={salir} alt="btn-salir" className="logout-icon" />
+          <img src="/images/salir.svg" alt="btn-salir" className="logout-icon" />
         </button>
       </section>
     </header>
