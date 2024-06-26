@@ -2,13 +2,13 @@ import "../css/sidebar.css";
 import Sidebar from "../components/Sidebar"
 import React from 'react';
 
-function Mesas() {
+function Pedidos() {
   return (
-    <section className="page">     
-      <Sidebar/>
-      <main className="main-container-a"><h1>Pedidos</h1></main>
-    </section>
+      <main className="main-container-a">
+        <h1>Pedidos</h1>
+      </main>
+
   );
 }
 
-export default Mesas;
+export default Pedidos;

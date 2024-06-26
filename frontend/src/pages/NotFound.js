@@ -1,10 +1,12 @@
 import "../css/styles.css";
 import React from 'react';
 
-function Mesas() {
+function NotFound() {
   return (
-    <div className="container-unavailable">Página No Encontrada</div>
+    <div className="container-unavailable">
+      Página No Encontrada
+    </div>
   );
 }
 
-export default Mesas;
+export default NotFound;

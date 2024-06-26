@@ -2,13 +2,12 @@ import "../css/sidebar.css";
 import Sidebar from "../components/Sidebar"
 import React from 'react';
 
-function Mesas() {
+function Proveedores() {
   return (
-    <section className="page">    
-      <Sidebar/>
+
       <main className="main-container-a"><h1>Proveedores</h1></main>
-    </section>
+
   );
 }
 
-export default Mesas;
+export default Proveedores;

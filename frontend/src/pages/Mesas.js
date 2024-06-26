@@ -2,13 +2,15 @@ import "../css/sidebar.css";
 import Sidebar from "../components/Sidebar"
 import React from 'react';
 import Menu from "../components/Menu";
+import MesasComp from "../components/Mesas"
 
 function Mesas() {
   return (
-    <section className="page">
-      <Sidebar />
-      <main className="main-container-a"><h1>Mesas</h1></main>
-    </section>
+
+    <main className="main-container-a">
+      <MesasComp />
+    </main>
+
   );
 }
 

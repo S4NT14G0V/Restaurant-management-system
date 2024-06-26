@@ -10,29 +10,25 @@ import Empleados from "./Empleados";
 import Facturacion from "./Facturacion";
 import Reservaciones from "./Reservaciones";
 import Proveedores from "./Proveedores";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Layout from "./Layout";
+import LayoutHome from "./LayoutHome";
 
 
 function App() {
   return (
     <Router>
-      <div className="global-container">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/mesas" element={<Mesas />} />
-          <Route path="/pedidos" element={<Pedidos />} />
-          <Route path="/inventario" element={<Inventario/>} />
-          <Route path="/empleados" element={<Empleados />} />
-          <Route path="/facturacion" element={<Facturacion />} />
-          <Route path="/proveedores" element={<Proveedores />} />
-          <Route path="/reservaciones" element={<Reservaciones/>} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </div>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<LayoutHome><Home /></LayoutHome>} />
+        <Route path="/mesas" element={<Layout><Mesas /></Layout>} />
+        <Route path="/pedidos" element={<Layout><Pedidos /></Layout>} />
+        <Route path="/inventario" element={<Layout><Inventario /></Layout>} />
+        <Route path="/empleados" element={<Layout><Empleados /></Layout>} />
+        <Route path="/facturacion" element={<Layout><Facturacion /></Layout>} />
+        <Route path="/proveedores" element={<Layout><Proveedores /></Layout>} />
+        <Route path="/reservaciones" element={<Layout><Reservaciones /></Layout>} />
+        <Route path="*" element={<Layout><NotFound /></Layout>} />
+      </Routes>
     </Router>
   );
 }
