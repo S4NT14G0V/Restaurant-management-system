@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SidebarItem = ({ imageUrl, title, id, isActive }) => {
+const SidebarItem = ({ imageUrl, title, id, isActive, hasText }) => {
   const navigate = useNavigate();
 
   const handleItemClick = () => {
@@ -11,9 +11,9 @@ const SidebarItem = ({ imageUrl, title, id, isActive }) => {
 
   return (
     <div className={`sidebar-item`}>
-      <button title={`Boton de ${title}`} className={`sidebar-button  sidebar-button-${isActive}`} onClick={handleItemClick}>
+      <button title={`Boton de ${title}`} className={`sidebar-button  sidebar-button-${isActive} `} onClick={handleItemClick}>
         <img src={imageUrl} alt={title} className={`sidebar-item-icon-${isActive}`} />
-        {title}
+        {hasText ? title : ''}
       </button>
     </div>
   );
