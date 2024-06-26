@@ -1,6 +1,6 @@
 import "../css/login.css";
 import React from 'react';
-import LoginComp from '../components/Login';
+import LoginComp from "../components/Login"
 
 function Login({ setIsAuthenticated }) {
   return (

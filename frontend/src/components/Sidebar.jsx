@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SidebarItem from './SidebarItem';
 import { useLocation } from 'react-router-dom';
 
 export default function Sidebar() {
 
-    let location = useLocation();
+    const location = useLocation();
+    const [sidebarActive, setSidebarActive] = useState(true)
 
     const items = [
         { id: "home", imageUrl: "/images/home.svg", title: "inicio" },
@@ -19,7 +20,7 @@ export default function Sidebar() {
     ];
 
     return (
-        <aside className="sidebar">
+        <aside className={`sidebar sidebar-${sidebarActive? 'active' : 'disabled'}`}>
             {items.map(item => (
                 <SidebarItem
                     key={item.id}
@@ -27,8 +28,12 @@ export default function Sidebar() {
                     imageUrl={item.imageUrl}
                     title={item.title}
                     isActive={location.pathname !== `/${item.id}`}
+                    hasText={sidebarActive}
                 />
             ))}
+            <button className='sidebar-action' onClick={() => { 
+                setSidebarActive(!sidebarActive) }}>{sidebarActive ? <img src="/images/arrow_back.svg" alt="Ocultar" className={`sidebar-img-active`} /> : <img src="/images/arrow_forward.svg" alt="Mostrar" />}
+            </button>
         </aside>
     );
 }

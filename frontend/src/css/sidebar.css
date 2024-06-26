@@ -1,18 +1,9 @@
-/* -----------------
-Tabla de contenidos:
---------------------
-1. Fuente ................ 11
-2. Variables ............. 17
-3. Estilos generales ..... 32
--------------------- 
-*/
-
 /* ----- Fuente ----- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* ----- Variables ----- */
-:root{
+:root {
     /* PRIMARY */
     --gren: hsl(75, 94%, 57%);
 
@@ -28,7 +19,7 @@ Tabla de contenidos:
     /* TYPOGRAPHY */
     --font-size-p: 14px;
     --font-family: 'Inter', sans-serif;
-}   
+}
 
 /* ----------------------------- */
 /* ----- Estilos generales ----- */
@@ -41,15 +32,24 @@ Tabla de contenidos:
     font-family: var(--font-family);
 }
 
+body {
+    max-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
 .global-container {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         "nav"
         "main"
         "footer";
     grid-template-columns: 1fr;
     grid-template-rows: 100px 1fr 50px;
-    height: 100dvh;
+    max-height: 100vh;
+    height: 100%;
     background-color: var(--white);
 }
 
@@ -125,25 +125,45 @@ Tabla de contenidos:
 .page {
     grid-area: main;
     display: flex;
-    height: 100%; 
     background-color: var(--buttons);
+    overflow: hidden;
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
+    align-items: start;
     border-radius: 0 20px 20px 0;
     background-color: var(--white);
-    height: 100%;
-    width: 250px;
-    padding: 20px 0 20px 20px;
+    height: calc(100vh - 150px);
+    padding: 20px 0 20px 10px;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    gap: 10px;
+    transition: all 1s;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.sidebar {
+    scrollbar-width: none;
+}
+
+.sidebar {
+    -ms-overflow-style: none;
 }
 
 .sidebar-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Espacio entre elementos */
     width: 100%;
+    max-height: 50px;
+    min-height: 50px;
+    transition: all 100ms;
 }
 
 .sidebar-button {
@@ -151,7 +171,7 @@ Tabla de contenidos:
     position: relative;
     border-radius: 15px 0px 0px 15px;
     padding-block: 15px;
-    width: 100%; 
+    width: 100%;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -160,7 +180,7 @@ Tabla de contenidos:
     font-weight: 600;
     font-size: 14px;
     transform: scale(1);
-    transition: all 300ms;
+    transition: all 400ms;
 }
 
 .sidebar-button img {
@@ -189,16 +209,91 @@ Tabla de contenidos:
     filter: invert(1);
 }
 
+.sidebar-action {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: calc(100dvh - 150px);
+    color: var(--off-black);
+    background-color: var(--buttons-hover);
+    border: none;
+    right: 0;
+    top: 0;
+}
+
+.sidebar-action img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+}
+
+.sidebar-img-active {
+    margin-left: 10px;
+}
+
+.sidebar-active{
+    width: 250px;
+    min-width: 250px;
+    max-height: calc(100vh - 150px);
+    transition: all 2s;
+}
+
+.sidebar-disabled {
+    min-width: 85px;
+    max-width: 85px;
+    max-height: calc(100vh - 150px);
+    transition: all 1s;
+}
+
+.sidebar-disabled .sidebar-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    margin-right: 20px;
+    transition: all 2s;
+}
+
+.sidebar-disabled .sidebar-button {
+    display: flex;
+    border-radius: 15px 0px 0px 15px;
+    padding-block: 23.75px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 14px;
+    transform: scale(1);
+    transition: all 2s;
+}
+
+.sidebar-disabled .sidebar-button img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    margin-inline: 25%;
+    margin-block: 15px;
+}
+
 .main-container-a {
-    flex: content;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
     padding: 10px;
-    border-left: 5px solid  var(--buttons);
+    border-left: 5px solid var(--buttons);
     border-radius: 20px 0 0 20px;
     background-color: white;
     font-size: 100px;
@@ -218,7 +313,7 @@ Tabla de contenidos:
     border-top: 5px solid var(--buttons);
 }
 
-.global-footer h2{
+.global-footer h2 {
     font-size: 14px;
 }
 
@@ -234,7 +329,7 @@ Tabla de contenidos:
     padding: 40px;
 }
 
-.mesa-item {    
+.mesa-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -247,13 +342,14 @@ Tabla de contenidos:
     border: none;
     gap: 20px;
 }
-.mesa-item-icon{
+
+.mesa-item-icon {
     filter: invert(1);
     height: 75px;
     width: 75px;
 }
 
-.mesa-item-button{
+.mesa-item-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -262,10 +358,10 @@ Tabla de contenidos:
     border: none;
     background-color: white;
     border-radius: 100%;
-    padding: 20px; 
+    padding: 20px;
 }
 
-.mesa-item-actions{
+.mesa-item-actions {
     display: flex;
     width: 100%;
     justify-content: center;
