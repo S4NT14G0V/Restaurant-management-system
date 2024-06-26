@@ -10,6 +10,8 @@ Tabla de contenidos:
 /* ----- Fuente ----- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
 
 /* ----- Variables ----- */
 :root{
@@ -297,4 +299,93 @@ Tabla de contenidos:
     width: 100%;
     justify-content: center;
     gap: 10px;
+}
+
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:  url("../../public/images/fondo.jpg");
+    height: 100vh;
+  }
+  
+  .login {
+    display: flex;
+    background-color: #fbf0d0;
+    width: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-logo img {
+    max-width: 100%;
+    height: 100%;
+  }
+  
+  .login-content {
+    flex: 1;
+    text-align: center;
+    padding-left: 20px;
+  }
+  
+  .login-title {
+    color: #bd2300;
+    font-family: "Carter One";
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+  }
+  
+  .login-subtitle {
+    font-family: "Carter One";
+    color: #fe7602;
+    font-size: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .login-button {
+    background-color: #f5590e;
+    width: 100% ;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+  }
+  
+  .login-button:hover {
+    background-color: #e64a19;
+  }
+
+  .error-message {
+    color: red;
+    margin-bottom: 15px;
+  }
+
+  .input-text{
+    font-size: 0.7rem;
+    text-align: left;
+    padding: 3px;
+  }
 }
