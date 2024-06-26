@@ -1,5 +1,6 @@
-import "./css/styles.css"
-import Menu from './componentes/Menu';
+import "../css/styles.css";
+import Menu from "../components/Menu";
+
 
 function Home() {
   return (
