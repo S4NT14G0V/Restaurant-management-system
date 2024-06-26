@@ -28,6 +28,7 @@ export default function LoginComp({ setIsAuthenticated }) {
         {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleLogin}>
           <div className="form-group">
+            <p className='input-text'>Usuario</p>
             <input
               type="text"
               placeholder="Ingresar el usuario"
@@ -37,6 +38,7 @@ export default function LoginComp({ setIsAuthenticated }) {
             />
           </div>
           <div className="form-group">
+            <p className='input-text'>Contraseña</p>
             <input
               type="password"
               placeholder="Ingresar la contraseña"
