@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SidebarItem from './SidebarItem';
 import { useLocation } from 'react-router-dom';
 
 export default function Sidebar() {
 
-    let location = useLocation();
+    const location = useLocation();
+    const [sidebarActive, setSidebarActive] = useState(true)
 
     const items = [
         { id: "home", imageUrl: "/images/home.svg", title: "inicio" },
@@ -29,6 +30,7 @@ export default function Sidebar() {
                     isActive={location.pathname !== `/${item.id}`}
                 />
             ))}
+            <button className='sidebar-action' onClick={() => {setSidebarActive(!sidebarActive)}}>{sidebarActive ? <img src="/images/arrow_back.svg" alt="Ocultar" /> : <img src="/images/arrow_forward.svg" alt="Mostrar" />}</button>
         </aside>
     );
 }

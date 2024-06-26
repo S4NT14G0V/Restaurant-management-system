@@ -1,9 +1,12 @@
 import "../css/styles.css";
 import React from 'react';
+import LoginComp from "../components/Login"
 
 function Login() {
   return (
-    <div className="container-unavailable">Página de Inicio</div>
+    <div className="container-unavailable">
+      <LoginComp/>
+    </div>
   );
 }
 
