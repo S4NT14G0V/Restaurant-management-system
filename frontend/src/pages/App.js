@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Mesas from "./Mesas";
 import Home from "./Home";
@@ -12,24 +12,87 @@ import Reservaciones from "./Reservaciones";
 import Proveedores from "./Proveedores";
 import Layout from "./Layout";
 import LayoutHome from "./LayoutHome";
-
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/home" element={<LayoutHome><Home /></LayoutHome>} />
-        <Route path="/mesas" element={<Layout><Mesas /></Layout>} />
-        <Route path="/pedidos" element={<Layout><Pedidos /></Layout>} />
-        <Route path="/inventario" element={<Layout><Inventario /></Layout>} />
-        <Route path="/empleados" element={<Layout><Empleados /></Layout>} />
-        <Route path="/facturacion" element={<Layout><Facturacion /></Layout>} />
-        <Route path="/proveedores" element={<Layout><Proveedores /></Layout>} />
-        <Route path="/reservaciones" element={<Layout><Reservaciones /></Layout>} />
-        <Route path="*" element={<Layout><NotFound /></Layout>} />
+        <Route path="/" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <LayoutHome><Home /></LayoutHome>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/mesas"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Layout><Mesas /></Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/pedidos"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Layout><Pedidos /></Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/inventario"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Layout><Inventario /></Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/empleados"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Layout><Empleados /></Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/facturacion"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Layout><Facturacion /></Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/proveedores"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Layout><Proveedores /></Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/reservaciones"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Layout><Reservaciones /></Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+          <Layout><NotFound/></Layout>
+        </ProtectedRoute>
+          } />
       </Routes>
     </Router>
   );
 }
+
 export default App;

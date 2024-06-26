@@ -1,9 +1,12 @@
-import "../css/styles.css";
+import "../css/login.css";
 import React from 'react';
+import LoginComp from '../components/Login';
 
-function Login() {
+function Login({ setIsAuthenticated }) {
   return (
-    <div className="container-unavailable">Página de Inicio</div>
+    <div className="container-login">
+      <LoginComp setIsAuthenticated={setIsAuthenticated} />
+    </div>
   );
 }
 
