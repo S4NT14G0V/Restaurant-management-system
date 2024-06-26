@@ -6,7 +6,7 @@ import Menu from "../components/Menu";
 function Mesas() {
   return (
     <section className="page">
-      <aside><Sidebar actual="mesas"/></aside>
+      <Sidebar />
       <main className="main-container-a"><h1>Mesas</h1></main>
     </section>
   );

@@ -64,6 +64,7 @@ Tabla de contenidos:
 
 .navbar-companyinfo{
     gap: 20px;
+    font-size: 24px;
     color: var(--buttons);
 }
 
@@ -170,6 +171,7 @@ Tabla de contenidos:
     transform: scale(1);
     transition: all 200ms;
     position: relative;
+    text-transform: capitalize;
 }
 
 .container-item button::after{
@@ -228,6 +230,9 @@ Tabla de contenidos:
     height: 50px;
     width: 100%;
     border-top: 5px solid var(--buttons);
+}
+
+.global-footer h2{
     font-size: 14px;
 }
 

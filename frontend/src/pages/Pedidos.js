@@ -5,7 +5,7 @@ import React from 'react';
 function Mesas() {
   return (
     <section className="page">     
-      <aside><Sidebar actual="pedidos"/></aside>
+      <Sidebar/>
       <main className="main-container-a"><h1>Pedidos</h1></main>
     </section>
   );

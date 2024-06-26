@@ -1,13 +1,17 @@
 import React from 'react';
 import SidebarItem from './SidebarItem';
+import { useLocation } from 'react-router-dom';
 
-export default function Sidebar({ actual }) {
+export default function Sidebar() {
+
+    let location = useLocation();
+
     const items = [
-        { id: "home", imageUrl: "/images/home.svg", title: "home" },
+        { id: "home", imageUrl: "/images/home.svg", title: "inicio" },
         { id: "mesas", imageUrl: "/images/mesa.svg", title: "mesas" },
         { id: "pedidos", imageUrl: "/images/pedido.svg", title: "pedidos" },
         { id: "reservaciones", imageUrl: "/images/reservacion.svg", title: "reservaciones" },
-        { id: "facturacion", imageUrl: "/images/factura.svg", title: "facturacion" },
+        { id: "facturacion", imageUrl: "/images/factura.svg", title: "facturación" },
         { id: "inventario", imageUrl: "/images/inventario.svg", title: "inventario" },
         { id: "empleados", imageUrl: "/images/empleado.svg", title: "empleados" },
         { id: "proveedores", imageUrl: "/images/proveedor.svg", title: "proveedores" },
@@ -15,16 +19,16 @@ export default function Sidebar({ actual }) {
     ];
 
     return (
-        <main className="sidebar">
+        <aside className="sidebar">
             {items.map(item => (
                 <SidebarItem
                     key={item.id}
                     id={item.id}
                     imageUrl={item.imageUrl}
                     title={item.title}
-                    isActive={item.id !== actual}
+                    isActive={location.pathname !== `/${item.id}`}
                 />
             ))}
-        </main>
+        </aside>
     );
 }
