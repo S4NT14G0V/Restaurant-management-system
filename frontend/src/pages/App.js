@@ -13,6 +13,7 @@ import Proveedores from "./Proveedores";
 import Layout from "./Layout";
 import LayoutHome from "./LayoutHome";
 import ProtectedRoute from "./ProtectedRoute";
+import '../css/styles.css'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

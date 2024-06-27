@@ -1,5 +1,6 @@
 import "../css/styles.css";
 import React from 'react';
+import '../css/styles.css';
 
 function NotFound() {
   return (

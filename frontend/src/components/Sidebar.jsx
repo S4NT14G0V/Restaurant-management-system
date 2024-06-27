@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SidebarItem from './SidebarItem';
 import { useLocation } from 'react-router-dom';
+import '../css/sidebar.css';
 
 export default function Sidebar() {
 

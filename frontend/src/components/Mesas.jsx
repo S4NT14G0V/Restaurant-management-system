@@ -1,5 +1,6 @@
 import React from 'react'
 import MesaItem from "./MesaItem"
+import '../css/mesas.css'
 
 export default function Mesas() {
   return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuItem from "./MenuItem";
+import '../css/menuLayout.css';
 
 export default function Menu() {
   return (

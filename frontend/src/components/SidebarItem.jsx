@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../css/sidebar.css';
 
 const SidebarItem = ({ imageUrl, title, id, isActive, hasText }) => {
   const navigate = useNavigate();

@@ -1,0 +1,70 @@
+.navbar, .navbar-companyinfo ,.navbar-userinfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar{
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+    padding: 2%;
+    border-bottom: 5px solid var(--buttons);
+}
+
+.navbar-companyinfo{
+    gap: 20px;
+    font-size: 24px;
+    color: var(--buttons);
+}
+
+.navbar-userinfo{
+    gap: 20px;
+}
+
+.navbar-userinfo-details{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+    h2 {
+        font-size: 16px;
+    }
+
+    h3{
+        font-size: 14px;
+        color: var(--role);
+    }
+}
+
+.navbar-userinfo-logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--buttons);
+    transition: all 200ms;
+    position: relative;
+    transform: scale(1);
+}
+
+.navbar-userinfo-logout::after{
+    content: "";
+    position: absolute;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    border: 2px solid var(--white);
+    border-radius: 20px;
+}
+
+.navbar-userinfo-logout:hover{
+    background-color: var(--buttons-hover);
+    transform: scale(1.1);
+}
+
+.navbar-userinfo-logout:active{
+    transform: scale(1);
+}

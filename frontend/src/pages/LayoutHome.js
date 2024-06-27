@@ -1,7 +1,7 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import '../css/menuLayout.css'
 
 const LayoutHome = ({ children }) => {
     return (

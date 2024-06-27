@@ -1,0 +1,12 @@
+.global-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    border-top: 5px solid var(--buttons);
+}
+
+.global-footer h2{
+    font-size: 14px;
+}

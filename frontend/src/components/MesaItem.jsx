@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/mesas.css'
 
 export default function MesaItem({id}) {
   return (
