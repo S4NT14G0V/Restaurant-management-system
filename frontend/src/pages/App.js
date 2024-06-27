@@ -88,7 +88,7 @@ function App() {
         />
         <Route path="*" element={
           <ProtectedRoute isAuthenticated={isAuthenticated}>
-          <Layout><NotFound/></Layout>
+          <Layout><NotFound /></Layout>
         </ProtectedRoute>
           } />
       </Routes>
