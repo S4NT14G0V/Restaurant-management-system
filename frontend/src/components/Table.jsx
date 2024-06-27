@@ -13,25 +13,30 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import '../css/table.css'
 
-function createData(name, calories, fat, carbs, protein, price) {
+function createData(id, address, expedition_date, products_cantity, total_price) {
   return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-    price,
-    history: [
+    id,
+    address,
+    expedition_date,
+    products_cantity,
+    total_price,
+    products: [
       {
-        date: '2020-01-05',
-        customerId: '11091700',
-        amount: 3,
+        product_name: 'Picada Mata Diabeticos',
+        product_cantity: 1,
+        product_price: 50.50,
       },
       {
-        date: '2020-01-02',
-        customerId: 'Anonymous',
-        amount: 1,
+        product_name: 'Papas Fritas Colesterol King',
+        product_cantity: 1,
+        product_price: 45.50,
+      },
+      {
+        product_name: 'Cheeseburger Explota Arterias',
+        product_cantity: 1,
+        product_price: 25.00,
       },
     ],
   };
@@ -42,54 +47,48 @@ function Row(props) {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <React.Fragment>
+    <React.Fragment className='table'>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-        <TableCell component="th" scope="row">
-          {row.name}
-        </TableCell>
-        <TableCell align="right">{row.calories}</TableCell>
-        <TableCell align="right">{row.fat}</TableCell>
-        <TableCell align="right">{row.carbs}</TableCell>
-        <TableCell align="right">{row.protein}</TableCell>
-        <TableCell>
+        <TableCell align="center" component="th" scope="row">{row.id}</TableCell>
+        <TableCell align="center">{row.address}</TableCell>
+        <TableCell align="center">{row.expedition_date}</TableCell>
+        <TableCell align="center">{row.products_cantity}</TableCell>
+        <TableCell align="center">${row.total_price}</TableCell>
+        <TableCell align='center'>
           <IconButton
             aria-label="expand row"
-            size="small"
+            size="medium"
             onClick={() => setOpen(!open)}
           >
-            {open ? <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon/>}
+            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        
-        
+
+
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
-              <Typography variant="h6" gutterBottom component="div">
-                History
+              <Typography variant="h6" gutterBottom component="div" fontWeight={800} >
+                Productos
               </Typography>
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Customer</TableCell>
-                    <TableCell align="right">Amount</TableCell>
-                    <TableCell align="right">Total price ($)</TableCell>
+                    <TableCell />
+                    <TableCell align='center'>Producto</TableCell>
+                    <TableCell align="center">Cantidad</TableCell>
+                    <TableCell align="center">Precio Total</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {row.history.map((historyRow) => (
-                    <TableRow key={historyRow.date}>
-                      <TableCell component="th" scope="row">
-                        {historyRow.date}
-                      </TableCell>
-                      <TableCell>{historyRow.customerId}</TableCell>
-                      <TableCell align="right">{historyRow.amount}</TableCell>
-                      <TableCell align="right">
-                        {Math.round(historyRow.amount * row.price * 100) / 100}
-                      </TableCell>
+                  {row.products.map((productsRow) => (
+                    <TableRow>
+                      <TableCell />
+                      <TableCell align='center'>{productsRow.product_name}</TableCell>
+                      <TableCell align="center">{productsRow.product_cantity}</TableCell>
+                      <TableCell align="center">${productsRow.product_price}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -107,7 +106,7 @@ Row.propTypes = {
     calories: PropTypes.number.isRequired,
     carbs: PropTypes.number.isRequired,
     fat: PropTypes.number.isRequired,
-    history: PropTypes.arrayOf(
+    products: PropTypes.arrayOf(
       PropTypes.shape({
         amount: PropTypes.number.isRequired,
         customerId: PropTypes.string.isRequired,
@@ -121,11 +120,11 @@ Row.propTypes = {
 };
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-  createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-  createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-  createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
+  createData(12345, '4 Privet Drive, Little Whinging, Surrey', '12/05/24', 2, 28.27),
+  createData(23456, '308 Negra Arroyo Lane, Albuquerque, New Mexico', '13/05/24', 8, 228.15),
+  createData(34567, 'Apartment 5A, 2311 North Los Robles Avenue, Pasadena, California', '16/05/24', 12, 345.80),
+  createData(45678, '31 Spooner Street, Quahog, Rhode Island', '19/05/24', 10, 228.35),
+  createData(56789, '742 Evergreen Terrace, Springfield', '21/05/24', 3, 125.33),
 ];
 
 export default function CollapsibleTable() {
@@ -134,12 +133,12 @@ export default function CollapsibleTable() {
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
-            <TableCell>test</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-            <TableCell />
+            <TableCell align='center'>ID del Pedido</TableCell>
+            <TableCell align="center">Dirección</TableCell>
+            <TableCell align="center">Fecha de Expedición</TableCell>
+            <TableCell align="center">Número de Productos</TableCell>
+            <TableCell align="center">Precio Total</TableCell>
+            <TableCell align="center">Mostrar Productos</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
