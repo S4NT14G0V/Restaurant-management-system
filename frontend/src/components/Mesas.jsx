@@ -13,6 +13,14 @@ export default function Mesas() {
       <MesaItem id="6" />
       <MesaItem id="7" />
       <MesaItem id="8" />
+      <MesaItem id="9" />
+      <MesaItem id="10" />
+      <MesaItem id="11" />
+      <MesaItem id="12" />
+      <MesaItem id="13" />
+      <MesaItem id="15" />
+      <MesaItem id="16" />
+      <MesaItem id="17" />
     </div>
   )
 }

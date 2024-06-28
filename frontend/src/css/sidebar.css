@@ -39,7 +39,8 @@
     display: flex;
     position: relative;
     border-radius: 15px 0px 0px 15px;
-    padding-block: 15px;
+    padding-block: 10px;
+    height: 45px;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -84,10 +85,13 @@
     justify-content: center;
     align-items: center;
     width: 25px;
-    height: calc(100dvh - 150px);
+    min-height: 570px;
+    height: 100%;
+    max-height: 100%;
     color: var(--off-black);
     background-color: var(--buttons-hover);
     border: none;
+    border-radius: 0 20px 20px 0;
     right: 0;
     top: 0;
 }
@@ -131,7 +135,7 @@
 .sidebar-disabled .sidebar-button {
     display: flex;
     border-radius: 15px 0px 0px 15px;
-    padding-block: 23.75px;
+    padding-block: 22.5px;
     width: 100%;
     align-items: center;
     justify-content: center;

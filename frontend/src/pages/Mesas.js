@@ -5,7 +5,7 @@ import MesasComp from "../components/Mesas";
 function Mesas() {
   const handleAddMesa = () => {
     // Aquí puedes agregar la lógica para agregar una mesa
-    alert('Agregar Mesa button clicked!');
+    alert('Agregar Mesa Funcionando Correctamente!');
   };
 
   return (

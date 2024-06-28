@@ -4,7 +4,7 @@ import Table from "../components/Table";
 function Pedidos() {
   const handleAddMesa = () => {
     // Aquí puedes agregar la lógica para agregar una mesa
-    alert('Agregar Pedido button clicked!');
+    alert('Agregar Pedido Funcionando Correctamente!');
   };
 
   return (
