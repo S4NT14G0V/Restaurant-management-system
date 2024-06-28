@@ -3,9 +3,9 @@ import React from 'react';
 
 function Proveedores() {
   return (
-
-      <main className="main-container-a"><h1>Proveedores</h1></main>
-
+      <div className="content-container">
+        <h1>Proveedores</h1>
+      </div>
   );
 }
 

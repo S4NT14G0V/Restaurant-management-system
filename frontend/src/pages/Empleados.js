@@ -3,7 +3,9 @@ import React from 'react';
 
 function Empleados() {
   return (
-      <main className="main-container-a"><h1>Empleados</h1></main>
+      <div className="content-container">
+        <h1>Empleados</h1>
+      </div>
   );
 }
 

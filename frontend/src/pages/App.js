@@ -34,7 +34,7 @@ function App() {
           path="/mesas"
           element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Layout><Mesas /></Layout>
+              <Layout title='mesas'><Mesas /></Layout>
             </ProtectedRoute>
           }
         />
@@ -42,7 +42,7 @@ function App() {
           path="/pedidos"
           element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Layout><Pedidos /></Layout>
+              <Layout title='pedidos'><Pedidos /></Layout>
             </ProtectedRoute>
           }
         />
@@ -50,7 +50,7 @@ function App() {
           path="/inventario"
           element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Layout><Inventario /></Layout>
+              <Layout title='productos'><Inventario /></Layout>
             </ProtectedRoute>
           }
         />
@@ -58,7 +58,7 @@ function App() {
           path="/empleados"
           element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Layout><Empleados /></Layout>
+              <Layout title='empleados'><Empleados /></Layout>
             </ProtectedRoute>
           }
         />
@@ -66,7 +66,7 @@ function App() {
           path="/facturacion"
           element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Layout><Facturacion /></Layout>
+              <Layout title='facturas'><Facturacion /></Layout>
             </ProtectedRoute>
           }
         />
@@ -74,7 +74,7 @@ function App() {
           path="/proveedores"
           element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Layout><Proveedores /></Layout>
+              <Layout title='proveedores'><Proveedores /></Layout>
             </ProtectedRoute>
           }
         />
@@ -82,7 +82,7 @@ function App() {
           path="/reservaciones"
           element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <Layout><Reservaciones /></Layout>
+              <Layout title='reservaciones'><Reservaciones /></Layout>
             </ProtectedRoute>
           }
         />

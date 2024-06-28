@@ -3,7 +3,9 @@ import React from 'react';
 
 function Facturacion() {
   return (
-      <main className="main-container-a"><h1>Facturación</h1></main>
+      <div className="content-container">
+        <h1>Facturación</h1>
+      </div>
   );
 }
 

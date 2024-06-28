@@ -3,9 +3,9 @@ import React from 'react';
 
 function Reservaciones() {
   return (
-
-      <main className="main-container-a"><h1>Reservaciones</h1></main>
-
+      <div className="content-container">
+        <h1>Reservaciones</h1>
+      </div>
   );
 }
 
