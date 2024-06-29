@@ -5,7 +5,7 @@ import '../css/menuLayout.css'
 
 const LayoutHome = ({ children }) => {
     return (
-        <div className="global-container">
+        <div className="global-container-menu">
             <Navbar />
             {children}
             <Footer />

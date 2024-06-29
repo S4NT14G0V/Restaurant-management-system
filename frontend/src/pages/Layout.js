@@ -8,18 +8,16 @@ import '../css/sidebarLayout.css'
 
 const Layout = ({ children, title }) => {
     return (
-        <div className="global-container">
+        <section className="global-container">
             <Navbar />
-            <section className="page">
-                <Sidebar />
-                <div className="main-container-a">
-                    <Search title={title}/>
-                    <Divider />
-                    {children}
-                </div>
-            </section>
+            <Sidebar />
+            <main className="main-container-a">
+                <Search title={title} />
+                <Divider />
+                {children}
+            </main>
             <Footer />
-        </div>
+        </section>
     );
 };
 

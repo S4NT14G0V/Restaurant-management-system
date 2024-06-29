@@ -1,3 +1,16 @@
+.global-container-menu {
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 50px;
+    max-height: 100vh;
+    height: 100%;
+    background-color: var(--white);
+}
+
 .container-unavailable{
     display: flex;
     justify-content: center;

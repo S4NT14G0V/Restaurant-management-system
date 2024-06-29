@@ -1,10 +1,10 @@
 .global-container {
     display: grid;
     grid-template-areas:
-        "nav"
-        "main"
-        "footer";
-    grid-template-columns: 1fr;
+        "nav nav"
+        "aside main"
+        "footer footer";
+    grid-template-columns: auto 1fr;
     grid-template-rows: 100px 1fr 50px;
     max-height: 100vh;
     height: 100%;
@@ -75,6 +75,10 @@
 
 .content-action-button:hover{
     transform: scale(1.025);
+}
+
+.sidebar{
+    grid-area: aside;
 }
 
 .global-footer {
