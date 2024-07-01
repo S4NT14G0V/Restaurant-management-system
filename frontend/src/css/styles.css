@@ -22,13 +22,6 @@
     font-family: var(--font-family);
 }
 
-.global-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-color: var(--white);
-}
-
 .container-unavailable {
     display: flex;
     justify-content: center;

@@ -9,7 +9,8 @@
     height: 100px;
     width: 100%;
     padding: 2%;
-    border-bottom: 5px solid var(--buttons);
+    border-bottom: 5px solid rgba(255, 66, 4, 0.85);
+    background-color: var(--white);
 }
 
 .navbar-companyinfo{
@@ -28,40 +29,34 @@
     gap: 5px;
     
     h2 {
-        font-size: 16px;
+        font-size: 15px;
+        font-weight: 500;
     }
 
     h3{
-        font-size: 14px;
+        font-size: 13px;
         color: var(--role);
     }
+    padding-right: 25px;
+    border-right: 2px solid rgba(255, 66, 4, 1);
 }
 
 .navbar-userinfo-logout{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 48px;
-    width: 48px;
+    height: 36px;
+    width: 36px;
     border: none;
-    border-radius: 50%;
-    background-color: var(--buttons);
+    background-color: transparent;
     transition: all 200ms;
     position: relative;
     transform: scale(1);
-}
-
-.navbar-userinfo-logout::after{
-    content: "";
-    position: absolute;
-    height: calc(100% - 10px);
-    width: calc(100% - 10px);
-    border: 2px solid var(--white);
-    border-radius: 20px;
+    border-radius: 100%;
 }
 
 .navbar-userinfo-logout:hover{
-    background-color: var(--buttons-hover);
+    background-color: rgba(255, 66, 4, 0.3);
     transform: scale(1.1);
 }
 

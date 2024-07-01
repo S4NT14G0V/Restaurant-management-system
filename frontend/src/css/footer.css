@@ -4,9 +4,11 @@
     align-items: center;
     height: 50px;
     width: 100%;
-    border-top: 5px solid var(--buttons);
+    border-top: 5px solid rgba(255, 66, 4, 0.85);
+    background-color: var(--white);
 }
 
 .global-footer h2{
     font-size: 14px;
+    font-weight: 600;
 }

@@ -4,31 +4,91 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-rows: repeat(auto-fill, 240px);
+    grid-template-rows: repeat(auto-fill, auto);
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 20px;
     padding: 20px;
-    overflow-y: auto; /* Esto permite el scroll vertical */
+    overflow-y: auto;
+    box-sizing: border-box;
+    /* Esto permite el scroll vertical */
 }
 
 .mesa-item {
+    background-color: rgba(255, 104, 4, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding-top: 20px;
+    border: none;
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 20px;
-    background-color: #BF2604;
     padding: 20px;
     text-align: center;
-    color: white;
-    font-size: 2rem;
-    border: none;
-    gap: 20px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 1.7rem;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+}
+
+.mesa-item-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.mesa-item-details{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.mesa-item-details-date, .mesa-item-details-capacity{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+.mesa-item-details-capacity{
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .mesa-item-icon {
-    filter: invert(1);
     height: 75px;
     width: 75px;
+    margin-block: 10px;
+}
+
+.mesa-item-details .mesa-item-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.mesa-item-price{
+    font-size: 0.9rem;
+    color: rgb(14, 124, 29);
+    margin-bottom: 10px;
+    margin-top: -10px;
+    font-weight: 600;
+}
+
+.mesa-divider {
+    background-color: rgba(255, 66, 4, 0.3);
+    width: 100%;
+    border: none;
+    height: 1px;
+    z-index: 99;
+    margin-block: 5px;
 }
 
 .mesa-item-button {
@@ -38,9 +98,18 @@
     height: 25px;
     width: 25px;
     border: none;
-    background-color: white;
-    border-radius: 100%;
     padding: 20px;
+    background-color: transparent;
+    border-bottom: 2px solid rgba(255, 66, 4, 0.68);
+    transition: all 300ms;
+}
+
+.mesa-item-button:hover{
+    background-color: rgba(255, 66, 4, 0.3);
+    color: var(--buttons-hover);
+    transform: scale(1.025);
+    border-bottom: none;
+    border-radius: 100%;
 }
 
 .mesa-item-actions {
