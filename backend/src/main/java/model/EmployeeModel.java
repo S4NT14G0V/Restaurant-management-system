@@ -1,11 +1,11 @@
-package com.backend.backend.model;
-
+package model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 @Entity
 @Table(name= "Employee")
 
@@ -22,7 +22,6 @@ public class EmployeeModel {
     private Double salary;
     private String horary; 
 
-    
     public EmployeeModel(String horary, int id, Long identfication, String job, String name, Long phone, Double salary) {
         this.horary = horary;
         this.id = id;
