@@ -21,12 +21,13 @@ public class EmployeeControl {
     @Autowired
     EmployeeService employeeService;
 
-    @GetMapping()
+    @GetMapping("/getAll")
     public List<EmployeeModel> ObtainEmployeList(){
+        System.out.println((List<EmployeeModel>) employeeService.ObtainEmployeList());
         return employeeService.ObtainEmployeList();
     }
     
-    @PostMapping()
+    @PostMapping("/create")
     public EmployeeModel CreateEmploye(@RequestBody EmployeeModel employee){
         return this.employeeService.CreateEmploye(employee);
     }

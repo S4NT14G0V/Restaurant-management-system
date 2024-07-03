@@ -15,17 +15,20 @@ public class EmployeeModel {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(unique=true, nullable = false)
     private int id;
-    private Long identfication;
+    private Long identification;
     private String name;
     private Long phone;
     private String job;
     private Double salary;
     private String horary; 
 
-    public EmployeeModel(String horary, int id, Long identfication, String job, String name, Long phone, Double salary) {
+    public EmployeeModel() {
+    }
+    
+    public EmployeeModel(String horary, int id, Long identification, String job, String name, Long phone, Double salary) {
         this.horary = horary;
         this.id = id;
-        this.identfication = identfication;
+        this.identification = identification;
         this.job = job;
         this.name = name;
         this.phone = phone;
@@ -40,12 +43,12 @@ public class EmployeeModel {
         this.id = id;
     }
 
-    public Long getIdentfication() {
-        return identfication;
+    public Long getIdentification() {
+        return identification;
     }
 
-    public void setIdentfication(Long identfication) {
-        this.identfication = identfication;
+    public void setIdentification(Long identification) {
+        this.identification = identification;
     }
 
     public String getName() {

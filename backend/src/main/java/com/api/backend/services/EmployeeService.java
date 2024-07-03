@@ -14,6 +14,7 @@ public class EmployeeService {
     EmployeeRepo employeeRepo;
 
     public List<EmployeeModel> ObtainEmployeList(){
+        System.out.println((List<EmployeeModel>) employeeRepo.findAll());
         return (List<EmployeeModel>) employeeRepo.findAll();
     }
 
