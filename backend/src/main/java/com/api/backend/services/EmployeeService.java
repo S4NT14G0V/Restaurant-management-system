@@ -1,4 +1,5 @@
 package com.api.backend.services;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,14 +12,22 @@ import com.api.backend.repository.EmployeeRepo;
 public class EmployeeService {
 
     @Autowired
-    EmployeeRepo employeeRepo;
+    private EmployeeRepo employeeRepo;
 
-    public List<EmployeeModel> ObtainEmployeList(){
+    public List<EmployeeModel> obtainEmployeeList() {
         System.out.println((List<EmployeeModel>) employeeRepo.findAll());
         return (List<EmployeeModel>) employeeRepo.findAll();
     }
 
-    public EmployeeModel CreateEmploye(EmployeeModel employee){
+    public EmployeeModel createEmployee(EmployeeModel employee) {
         return employeeRepo.save(employee);
+    }
+
+    public EmployeeModel updateEmployee(EmployeeModel employee) {
+        return employeeRepo.save(employee);
+    }
+
+    public void deleteEmployee(int id) {
+        employeeRepo.deleteById(id);
     }
 }

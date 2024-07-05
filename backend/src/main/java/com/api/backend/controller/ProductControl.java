@@ -12,35 +12,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.backend.model.EmployeeModel;
-import com.api.backend.services.EmployeeService;
+import com.api.backend.model.ProductModel;
+import com.api.backend.services.ProductService;
 
 @RestController
-@RequestMapping("/employee")
-public class EmployeeControl{
+@RequestMapping("/product")
+public class ProductControl {
 
     @Autowired
-    private EmployeeService employeeService;
+    private ProductService productService;
 
     @GetMapping("/getAll")
-    public List<EmployeeModel> obtainEmployeeList() {
-        System.out.println(employeeService.obtainEmployeeList());
-        return employeeService.obtainEmployeeList();
+    public List<ProductModel> obtainProductList() {
+        return productService.obtainProductList();
     }
 
     @PostMapping("/create")
-    public EmployeeModel createEmployee(@RequestBody EmployeeModel employee) {
-        return employeeService.createEmployee(employee);
+    public ProductModel createProduct(@RequestBody ProductModel product) {
+        return productService.createProduct(product);
     }
 
     @PutMapping("/edit/{id}")
-    public EmployeeModel updateEmployee(@RequestBody EmployeeModel employee) {
-        return employeeService.updateEmployee(employee);
+    public ProductModel updateProduct(@PathVariable int id, @RequestBody ProductModel product) {
+        product.setId(id);
+        return productService.updateProduct(product);
     }
-    
+
     @DeleteMapping("/delete/{id}")
-    public void deleteEmployee(@PathVariable int id) {
-        employeeService.deleteEmployee(id);
+    public void deleteProduct(@PathVariable int id) {
+        productService.deleteProduct(id);
     }
 }
-

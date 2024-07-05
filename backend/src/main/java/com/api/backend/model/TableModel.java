@@ -16,6 +16,7 @@ public class TableModel {
     @Column(unique=true, nullable = false)
     private int id;
     private int number;
+        
     public int getId() {
         return id;
     }

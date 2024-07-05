@@ -12,35 +12,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.backend.model.EmployeeModel;
-import com.api.backend.services.EmployeeService;
+import com.api.backend.model.InvoiceModel;
+import com.api.backend.services.InvoiceService;
 
 @RestController
-@RequestMapping("/employee")
-public class EmployeeControl{
+@RequestMapping("/invoice")
+public class InvoiceControl {
 
     @Autowired
-    private EmployeeService employeeService;
+    private InvoiceService invoiceService;
 
     @GetMapping("/getAll")
-    public List<EmployeeModel> obtainEmployeeList() {
-        System.out.println(employeeService.obtainEmployeeList());
-        return employeeService.obtainEmployeeList();
+    public List<InvoiceModel> obtainInvoiceList() {
+        return invoiceService.obtainInvoiceList();
     }
 
     @PostMapping("/create")
-    public EmployeeModel createEmployee(@RequestBody EmployeeModel employee) {
-        return employeeService.createEmployee(employee);
+    public InvoiceModel createInvoice(@RequestBody InvoiceModel invoice) {
+        return invoiceService.createInvoice(invoice);
     }
 
     @PutMapping("/edit/{id}")
-    public EmployeeModel updateEmployee(@RequestBody EmployeeModel employee) {
-        return employeeService.updateEmployee(employee);
+    public InvoiceModel updateInvoice(@PathVariable int id, @RequestBody InvoiceModel invoice) {
+        invoice.setId(id);
+        return invoiceService.updateInvoice(invoice);
     }
-    
+
     @DeleteMapping("/delete/{id}")
-    public void deleteEmployee(@PathVariable int id) {
-        employeeService.deleteEmployee(id);
+    public void deleteInvoice(@PathVariable int id) {
+        invoiceService.deleteInvoice(id);
     }
 }
-
