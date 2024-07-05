@@ -54,7 +54,7 @@ function Empleados() {
   const toggleModal = () => {
     setShowModal(prev => !prev);
   };
-
+  
   const handleAddEmployee = (newEmployee) => {
     fetch(apiUrls.employee.create, {
       method: 'POST',

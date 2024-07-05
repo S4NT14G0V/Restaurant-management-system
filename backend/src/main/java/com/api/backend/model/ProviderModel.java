@@ -13,14 +13,14 @@ public class ProviderModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String phoneNumber;
+    private Long phoneNumber;
     private String address;
 
     // Constructors, getters, and setters
     public ProviderModel() {
     }
 
-    public ProviderModel(String name, String phoneNumber, String address) {
+    public ProviderModel(String name, Long phoneNumber, String address) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
@@ -42,11 +42,11 @@ public class ProviderModel {
         this.name = name;
     }
 
-    public String getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

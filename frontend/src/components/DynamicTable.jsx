@@ -1,7 +1,6 @@
 // src/components/DynamicTable.js
 import React from 'react';
 import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -9,7 +8,6 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 
 // Row component
@@ -23,7 +21,7 @@ function Row({ row, columns }) {
           </TableCell>
         ))}
         <TableCell align="center">
-          <Button variant="contained">Ver Detalles</Button>
+          <Button variant="contained" > Editar </Button>
         </TableCell>
       </TableRow>
     </React.Fragment>
