@@ -20,12 +20,12 @@ public class TableControl {
     @Autowired
     TableService tableService;
 
-    @GetMapping()
+    @GetMapping("/getAll")
     public List<TableModel> ObtainTableList(){
         return tableService.ObtainTableList();
     }
     
-    @PostMapping()
+    @PostMapping("/create")
     public TableModel CreateTable(@RequestBody TableModel table){
         return this.tableService.CreateTable(table);
     }

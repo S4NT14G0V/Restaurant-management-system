@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import DynamicTable from '../components/DynamicTable';
-import AddEmployee from '../components/AddEmployee';
+import AddEmployee from '../components/AddEmployeeModal';
 import { apiUrls } from './ApiUrls';
 
 function Empleados() {
@@ -55,41 +55,44 @@ function Empleados() {
     setShowModal(prev => !prev);
   };
   
-  const handleAddEmployee = (newEmployee) => {
-    fetch(apiUrls.employee.create, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newEmployee)
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('New employee added:', data);
-        fetchEmployees(); // Actualizar la lista de empleados después de agregar uno nuevo
-      })
-      .catch(error => {
-        console.error('Error adding new employee:', error);
+  
+  const createEmployee = async (employeeData) => {
+    try {
+      const response = await fetch(apiUrls.employee.create, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(employeeData)
       });
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      fetchEmployees();
+
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
-  return (
-    <div className="content-container">
-      <div className='content-container-table'>
-      <div >
-        {error ? (
-          <div>{error}</div>
-        ) : (
-          <DynamicTable columns={data.columns} rows={data.rows} />
-        )
-        }
-        
-        <button onClick={toggleModal}>Agregar Empleado</button>
 
-        {showModal && <AddEmployee onSubmit={handleAddEmployee} />}
-        </div>
-      </div>
+  return (
+    <div className="employee-container">
+    <div className="content-container-action-mesa">
+      <button className="content-action-button" onClick={toggleModal}>
+        <img src="/images/mas_white.svg" alt="mas"/>
+        Agregar Empleado
+      </button>
     </div>
+
+    {error ? (
+      <div>{error}</div>
+    ) : (
+      <DynamicTable columns={data.columns} rows={data.rows} />
+    )}
+
+    <AddEmployee open={showModal} handleClose={toggleModal} createEmployee={createEmployee}/>
+  </div>
   );
 }
 

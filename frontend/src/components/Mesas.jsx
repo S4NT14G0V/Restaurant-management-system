@@ -1,25 +1,34 @@
-import React from 'react'
+import React ,{useEffect,useState}from 'react'
 import MesaItem from "./MesaItem"
 import '../css/mesas.css'
+import {apiUrls} from "../pages/ApiUrls"
 
 export default function Mesas() {
+
+  const [mesas, setMesas] = useState([]);
+
+  useEffect(() => {
+    fetchMesas();
+  }, []);
+
+  const fetchMesas = async () => {
+    try {
+      const response = await fetch(apiUrls.table.all); // Asegúrate de tener la URL correcta en apiUrls.mesas
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setMesas(data); // Guarda los datos de las mesas en el estado local
+    } catch (error) {
+      console.error('Error fetching mesas:', error);
+    }
+  };
+
   return (
-    <div className='mesas-menu'>
-      <MesaItem id="1" price={99.99}/>
-      <MesaItem id="2" price={99.99}/>
-      <MesaItem id="3" price={99.99}/>
-      <MesaItem id="4" price={99.99}/>
-      <MesaItem id="5" price={99.99}/>
-      <MesaItem id="6" price={99.99}/>
-      <MesaItem id="7" price={99.99}/>
-      <MesaItem id="8" price={99.99}/>
-      <MesaItem id="9" price={99.99}/>
-      <MesaItem id="10" price={99.99}/>
-      <MesaItem id="11" price={99.99}/>
-      <MesaItem id="12" price={99.99}/>
-      <MesaItem id="13" price={99.99}/>
-      <MesaItem id="14" price={99.99}/>
-      <MesaItem id="15" price={99.99}/>
+    <div className="mesas-menu">
+      {mesas.map((mesa) => (
+        <MesaItem capacity={mesa.capacity} id={mesa.id} price="123" />
+      ))}
     </div>
-  )
+  );
 }
