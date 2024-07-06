@@ -13,6 +13,7 @@ import Proveedores from "./Proveedores";
 import Layout from "./Layout";
 import LayoutHome from "./LayoutHome";
 import ProtectedRoute from "./ProtectedRoute";
+import Productos from "./Productos";
 import '../css/styles.css'
 
 function App() {
@@ -83,6 +84,14 @@ function App() {
           element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
               <Layout title='reservaciones'><Reservaciones /></Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/productos"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Layout title='productos'><Productos/></Layout>
             </ProtectedRoute>
           }
         />

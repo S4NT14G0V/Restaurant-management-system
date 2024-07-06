@@ -13,12 +13,12 @@ export default function Mesas() {
 
   const fetchMesas = async () => {
     try {
-      const response = await fetch(apiUrls.table.all); // Asegúrate de tener la URL correcta en apiUrls.mesas
+      const response = await fetch(apiUrls.table.all); 
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
-      setMesas(data); // Guarda los datos de las mesas en el estado local
+      setMesas(data);
     } catch (error) {
       console.error('Error fetching mesas:', error);
     }

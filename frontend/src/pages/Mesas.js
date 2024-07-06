@@ -10,7 +10,6 @@ function Mesas() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    //fetchTables();
   }, []);
   
   const toggleModal = () => {
@@ -30,7 +29,6 @@ function Mesas() {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      //fetchTables();
 
     } catch (error) {
       console.error('Error:', error);

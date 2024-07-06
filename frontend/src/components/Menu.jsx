@@ -12,7 +12,7 @@ export default function Menu() {
       <MenuItem id="inventario" imageUrl="/images/inventario.svg" title="inventario" />
       <MenuItem id="empleados" imageUrl="/images/empleado.svg" title="empleados" />
       <MenuItem id="proveedores" imageUrl="/images/proveedor.svg" title="proveedores" />
-      <MenuItem id="ajustes" imageUrl="/images/ajuste.svg" title="ajustes" />
+      <MenuItem id="productos" imageUrl="/images/producto.svg" title="productos" />
     </main>
   )
 }

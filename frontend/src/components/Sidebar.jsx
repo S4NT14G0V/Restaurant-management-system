@@ -17,7 +17,7 @@ export default function Sidebar() {
         { id: "inventario", imageUrl: "/images/inventario.svg", title: "inventario" },
         { id: "empleados", imageUrl: "/images/empleado.svg", title: "empleados" },
         { id: "proveedores", imageUrl: "/images/proveedor.svg", title: "proveedores" },
-        { id: "ajustes", imageUrl: "/images/ajuste.svg", title: "ajustes" }
+        { id: "productos", imageUrl: "/images/producto.svg", title: "productos" }
     ];
 
     return (
