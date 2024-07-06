@@ -7,5 +7,9 @@ export const apiUrls = {
     provider:{
         'all': 'http://localhost:8080/provider/getAll',
         "create": 'http://localhost:8080/provider/create'
+    },
+    table:{
+        'all': 'http://localhost:8080/table/getAll',
+        "create": 'http://localhost:8080/table/create'
     }
 }

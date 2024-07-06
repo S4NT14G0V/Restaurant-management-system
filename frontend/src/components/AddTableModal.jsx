@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import { Modal, Button, TextField, Box } from '@mui/material';
 
-const AddProviderModal = ({ open, handleClose, createProvider }) => {
-  const [providerData, setProviderData] = useState({
-    name: '',
-    phoneNumber: '',
-    address: ''
+const AddTableModal = ({ open, handleClose, createTable }) => {
+  const [TableData, setTableData] = useState({
+    number: '',
+    capacity: '',
   });
 
   const handleChange = (event) => {
-    setProviderData({ ...providerData, [event.target.name]: event.target.value });
+    setTableData({ ...TableData, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    createProvider(providerData);
+    createTable(TableData);
     handleClose();
   };
 
@@ -35,39 +34,30 @@ const AddProviderModal = ({ open, handleClose, createProvider }) => {
         boxShadow: 24,
         p: 4,
       }}>
-        <h2 id="modal-title">Add Provider</h2>
+        <h2 id="modal-title">Add Table</h2>
         <form onSubmit={handleSubmit}>
+          
           <TextField
-            id="name"
-            name="name"
-            label="Name"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={providerData.name}
-            onChange={handleChange}
-            required
-          />
-          <TextField
-            id="phoneNumber"
-            name="phoneNumber"
-            label="Phone Number"
+            id="number"
+            name="number"
+            label="Table Number"
             variant="outlined"
             fullWidth
             margin="normal"
             type="number"
-            value={providerData.phoneNumber}
+            value={TableData.number}
             onChange={handleChange}
             required
           />
           <TextField
-            id="address"
-            name="address"
-            label="Address"
+            id="capacity"
+            name="capacity"
+            label="capacity"
             variant="outlined"
             fullWidth
             margin="normal"
-            value={providerData.address}
+            type="number"
+            value={TableData.capacity}
             onChange={handleChange}
             required
           />
@@ -83,4 +73,4 @@ const AddProviderModal = ({ open, handleClose, createProvider }) => {
   );
 };
 
-export default AddProviderModal;
+export default AddTableModal;

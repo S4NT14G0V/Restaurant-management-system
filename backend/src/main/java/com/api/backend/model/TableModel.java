@@ -15,7 +15,9 @@ public class TableModel {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(unique=true, nullable = false)
     private int id;
+    @Column(unique=true, nullable = false)
     private int number;
+    private int capacity;
         
     public int getId() {
         return id;
@@ -41,7 +43,6 @@ public class TableModel {
         this.capacity = capacity;
     }
 
-    private int capacity;
 
     public TableModel(int capacity, int id, int number) {
         this.capacity = capacity;
@@ -49,7 +50,8 @@ public class TableModel {
         this.number = number;
     }
 
-    
+    public TableModel() {
+    }
 
     
 }

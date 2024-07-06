@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/mesas.css'
 
-export default function MesaItem({ id, price }) {
+export default function MesaItem({ id, price,capacity }) {
   return (
     <div className='mesa-item'>
       <header className='mesa-item-details'>
@@ -11,7 +11,7 @@ export default function MesaItem({ id, price }) {
         </div>
         <div className="mesa-item-details-capacity">
           <img src="/images/people.svg" className='mesa-item-icon' alt="MesaImg" />
-          {Math.floor(Math.random() * 6) + 1}
+          {capacity}
         </div>
       </header>
       <main className='mesa-item-info'>

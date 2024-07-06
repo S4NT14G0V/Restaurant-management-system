@@ -9,4 +9,3 @@ import com.api.backend.model.EmployeeModel;
 public interface EmployeeRepo extends JpaRepository<EmployeeModel, Integer>{
     
 }
-
