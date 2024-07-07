@@ -13,7 +13,7 @@ import Paper from '@mui/material/Paper';
 // Row component
 function Row({ row, columns }) {
   return (
-    <React.Fragment>
+    <React.Fragment className='table'>
       <TableRow>
         {columns.map((column) => (
           <TableCell key={column.id} align={column.align}>

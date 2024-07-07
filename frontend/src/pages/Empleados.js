@@ -46,16 +46,16 @@ function Empleados() {
         setData(formattedData);
       })
       .catch(error => {
-        console.error("There was an error fetching the employees data!", error);
-        setError("There was an error fetching the employees data.");
+        console.error("No se pudo obtener los datos de los empleados.", error);
+        setError("No se pudo obtener los datos de los empleados.");
       });
   };
 
   const toggleModal = () => {
     setShowModal(prev => !prev);
   };
-  
-  
+
+
   const createEmployee = async (employeeData) => {
     try {
       const response = await fetch(apiUrls.employee.create, {
@@ -77,22 +77,24 @@ function Empleados() {
 
 
   return (
-    <div className="employee-container">
-    <div className="content-container-action-mesa">
-      <button className="content-action-button" onClick={toggleModal}>
-        <img src="/images/mas_white.svg" alt="mas"/>
-        Agregar Empleado
-      </button>
+    <div className="content-container">
+      <div className="content-container-action-mesa">
+        <button className="content-action-button" onClick={toggleModal}>
+          <img src="/images/mas_white.svg" alt="mas" />
+          Agregar Empleado
+        </button>
+      </div>
+
+      {error ? (
+        <div>{error}</div>
+      ) : (
+        <div className='content-container-table'>
+          <DynamicTable columns={data.columns} rows={data.rows} />
+        </div>
+      )}
+
+      <AddEmployee open={showModal} handleClose={toggleModal} createEmployee={createEmployee} />
     </div>
-
-    {error ? (
-      <div>{error}</div>
-    ) : (
-      <DynamicTable columns={data.columns} rows={data.rows} />
-    )}
-
-    <AddEmployee open={showModal} handleClose={toggleModal} createEmployee={createEmployee}/>
-  </div>
   );
 }
 

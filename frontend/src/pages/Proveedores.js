@@ -69,7 +69,7 @@ function Proveedores() {
   };
 
   return (
-    <div className="proveedores-container">
+    <div className="content-container">
       <div className="content-container-action-mesa">
         <button className="content-action-button" onClick={toggleModal}>
           <img src="/images/mas_white.svg" alt="mas"/>
@@ -80,7 +80,9 @@ function Proveedores() {
       {error ? (
         <div>{error}</div>
       ) : (
-        <DynamicTable columns={data.columns} rows={data.rows} />
+        <div className='content-container-table'>
+          <DynamicTable columns={data.columns} rows={data.rows} />
+        </div>
       )}
 
       <AddProviderModal open={showModal} handleClose={toggleModal} createProvider={createProvider}/>
