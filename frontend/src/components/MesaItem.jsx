@@ -1,13 +1,17 @@
 import React from 'react'
 import '../css/mesas.css'
 
-export default function MesaItem({ id, price,capacity }) {
+export default function MesaItem({ id, price,capacity,stateItem }) {
+
+  const itemStates = ["Disponible","En uso","Reservada"]
+  const stateItemId = stateItem
+
   return (
     <div className='mesa-item'>
       <header className='mesa-item-details'>
-        <div className="mesa-item-details-date">
-          <img src="/images/date.svg" className='mesa-item-icon' alt="MesaImg" />
-          {Math.floor(Math.random() * 31)+1}/{Math.floor(Math.random() * 12)+1}/2024
+        <div className={`mesa-item-details-date mesa-item-state mesa-item-${stateItem}`}>
+          <span className={`${stateItemId === 2 ? 'mesa-separator' : ''}`}>{itemStates[stateItem]}</span>
+          <span className={`${stateItemId === 2 ? '' : 'mesa-item-display-none'}`}>{Math.floor(Math.random() * 24)+1}:{Math.floor(Math.random() * 60)+1}</span>
         </div>
         <div className="mesa-item-details-capacity">
           <img src="/images/people.svg" className='mesa-item-icon' alt="MesaImg" />

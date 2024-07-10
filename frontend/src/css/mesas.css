@@ -45,7 +45,6 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
     font-size: 0.8rem;
     color: rgba(0, 0, 0, 0.5);
     font-weight: 500;
@@ -116,4 +115,46 @@
     width: 100%;
     justify-content: center;
     gap: 10px;
+}
+
+.mesa-item-state{
+    border-radius: 20px;
+    padding:  5px 15px;
+}
+
+.mesa-item-0{
+    border: 1px solid rgba(1, 179, 16, 0.7);
+    background-color: rgba(1, 179, 16, 0.1);
+    color: rgba(1, 156, 14, 0.8);
+}
+
+.mesa-item-1{
+    border: 1px solid rgba(1, 93, 179, 0.7);
+    background-color: rgba(1, 93, 179, 0.1);
+    color: rgba(1, 93, 179, 0.8);
+}
+
+.mesa-item-2{
+    border: 1px solid rgba(99, 1, 179, 0.7);
+    background-color: rgba(99, 1, 179, 0.1);
+    color: rgba(99, 1, 179, 0.8);
+}
+
+.mesa-item-details-date{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.mesa-item-display-none{
+    display: none;
+}
+
+.mesa-item-display{
+    display: flex;
+}
+
+.mesa-separator{
+    border-right: 1px solid rgba(99, 1, 179, 0.7);
+    padding-right: 7px;
 }

@@ -26,9 +26,16 @@ export default function Mesas() {
 
   return (
     <div className="mesas-menu">
-      {mesas.map((mesa) => (
-        <MesaItem capacity={mesa.capacity} id={mesa.id} price="123" />
-      ))}
+      <MesaItem capacity={5} id={1} price="123" stateItem={0} />
+      <MesaItem capacity={5} id={1} price="123" stateItem={0} />
+      <MesaItem capacity={5} id={1} price="123" stateItem={1} />
+      <MesaItem capacity={5} id={1} price="123" stateItem={2} />
+      <MesaItem capacity={5} id={1} price="123" stateItem={0} />
+      <MesaItem capacity={5} id={1} price="123" stateItem={1} />
+      <MesaItem capacity={5} id={1} price="123" stateItem={2} />
+      <MesaItem capacity={5} id={1} price="123" stateItem={1} />
+      <MesaItem capacity={5} id={1} price="123" stateItem={2} />
+      
     </div>
   );
 }
