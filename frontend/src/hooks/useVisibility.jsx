@@ -18,8 +18,8 @@ function useVisibility(ref, options = {}) {
     observer.observe(ref.current);
 
     return () => {
-      if (observer && observer.unobserve) {
-        observer.unobserve(ref.current);
+      if (observer) {
+        observer.disconnect(); // Use disconnect() instead of unobserve()
       }
     };
   }, [ref, threshold]);
