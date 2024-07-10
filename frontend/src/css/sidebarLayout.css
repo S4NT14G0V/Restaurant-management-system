@@ -6,9 +6,9 @@
         "footer footer";
     grid-template-columns: auto 1fr;
     grid-template-rows: 100px 1fr 50px;
-    max-height: 100vh;
-    height: 100%;
     background-color: rgba(255, 66, 4, 0.85);
+    min-height: 100dvh;
+    position: relative; 
 }
 
 .navbar {
@@ -29,10 +29,9 @@
     justify-content: start;
     align-items: center;
     width: 100%;
-    height: calc(100dvh - 150px);
+    min-height: max-content;
     padding: 20px 40px 20px 40px;
     border-left: 2.5px solid rgba(255, 66, 4, 0.85);
-    border-radius: 20px 0 0 20px;
     background-color: white;
     font-size: 100px;
     font-weight: 600;
@@ -41,16 +40,16 @@
 }
 
 .content-container {
-    height: calc(100dvh - 277px);
+    height: 100%;
     width: 100%;
 }
 
 .content-container-mesa {
-    height: calc(100dvh - 276px);
+    height: 100%;
     width: 100%;
 }
 
-.content-container-action-mesa{
+.content-container-action-mesa {
     width: 100%;
     display: flex;
     justify-content: end;
@@ -58,7 +57,7 @@
     margin-bottom: 20px;
 }
 
-.content-action-button{
+.content-action-button {
     border-radius: 10px;
     border: none;
     background-color: var(--buttons-hover);
@@ -69,15 +68,15 @@
     width: 200px;
     color: white;
     font-weight: 500;
-    gap:10px;
+    gap: 10px;
     height: 30px;
 }
 
-.content-action-button:hover{
+.content-action-button:hover {
     transform: scale(1.025);
 }
 
-.sidebar{
+.sidebar {
     grid-area: aside;
 }
 

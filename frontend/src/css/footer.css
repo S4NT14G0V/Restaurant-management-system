@@ -6,6 +6,7 @@
     width: 100%;
     border-top: 5px solid rgba(255, 66, 4, 0.85);
     background-color: var(--white);
+    z-index: 100;
 }
 
 .global-footer h2{

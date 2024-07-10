@@ -1,6 +1,6 @@
 .mesas-menu {
     width: 100%;
-    height: calc(100dvh - 325px);
+    height: fit-content;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -8,8 +8,6 @@
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 20px;
     padding: 20px;
-    overflow-y: auto;
-    box-sizing: border-box;
     /* Esto permite el scroll vertical */
 }
 

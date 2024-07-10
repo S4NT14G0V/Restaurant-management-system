@@ -1,6 +1,6 @@
 .content-container-table{
     width: 100%;
-    height: calc(100dvh - 325px);
+    height: fit-content;
     border-radius: 20px;
 }
 
