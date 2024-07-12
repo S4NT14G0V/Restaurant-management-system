@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import SidebarItem from './SidebarItem';
 import '../css/sidebar.css';
 
-export default function Sidebar({ isFooterVisible }) {
+export default function Sidebar() {
   const location = useLocation();
   const [sidebarActive, setSidebarActive] = useState(true);
 
@@ -21,7 +21,7 @@ export default function Sidebar({ isFooterVisible }) {
 
   return (
     <aside className={`sidebar sidebar-width-${sidebarActive ? 'active' : 'disabled'}`}>
-      <div className={`sidebar-container sidebar-${sidebarActive ? 'active' : 'disabled'} sidebar-height-${isFooterVisible ? 'active' : 'disabled'}`}>
+      <div className={`sidebar-container sidebar-${sidebarActive ? 'active' : 'disabled'}`}>
         {items.map(item => (
           <SidebarItem
             key={item.id}

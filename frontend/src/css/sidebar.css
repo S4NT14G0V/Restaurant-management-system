@@ -29,11 +29,11 @@
     gap: 10px;
     transition: all 1s;
     border-right: 2.5px solid rgba(255, 66, 4, 0.85);
-    position: fixed;
     width: clamp(95px, 100%, 250px);
     z-index: 200;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    height: 100%;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -204,15 +204,6 @@
     margin-block: 15px;
 }
 
-.sidebar-height-active{
-    height: calc(100dvh - 150px);
-    transition: height 0ms;
-}
-
-.sidebar-height-disabled{
-    height: calc(100dvh - 100px);
-    transition: height 0ms;
-}
 /*
 .sidebar {
     display: flex;

@@ -37,6 +37,7 @@
     font-weight: 600;
     color: var(--buttons);
     text-align: center;
+    line-break: normal;
 }
 
 .content-container {

@@ -19,7 +19,7 @@ export default function Navbar() {
             <h2>Argenis Medina Morales</h2>
             <h3>Administrador</h3>
           </div>
-          <button className="navbar-userinfo-logout" title="Botón para Cerrar Sesión" onClick={() => navigate(`/home`)}>
+          <button className="navbar-userinfo-logout" title="Botón para Cerrar Sesión" onClick={() => navigate(`/`)}>
             <img src="/images/salir.svg" alt="btn-salir" className="logout-icon" />
           </button>
         </section>

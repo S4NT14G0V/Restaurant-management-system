@@ -1,17 +1,24 @@
-import React from 'react'
-import '../css/mesas.css'
+import React from 'react';
+import '../css/mesas.css';
 
-export default function MesaItem({ id, price,capacity,stateItem }) {
-
-  const itemStates = ["Disponible","En uso","Reservada"]
-  const stateItemId = stateItem
+export default function MesaItem({ id, price, capacity, stateItem, dragStart, dragEnter, dragEnd, dragOver, isDragging, dragOverMesa, index }) {
+  const itemStates = ["Disponible", "En uso", "Reservada"];
+  const stateItemId = stateItem;
+  const isDraggingItem = isDragging && dragOverMesa === index;
 
   return (
-    <div className='mesa-item'>
+    <div
+      className={`mesa-item ${isDraggingItem ? 'dragging' : ''}`}
+      draggable="true"
+      onDragStart={dragStart}
+      onDragEnter={dragEnter}
+      onDragEnd={dragEnd}
+      onDragOver={dragOver}
+    >
       <header className='mesa-item-details'>
         <div className={`mesa-item-details-date mesa-item-state mesa-item-${stateItem}`}>
           <span className={`${stateItemId === 2 ? 'mesa-separator' : ''}`}>{itemStates[stateItem]}</span>
-          <span className={`${stateItemId === 2 ? '' : 'mesa-item-display-none'}`}>{Math.floor(Math.random() * 24)+1}:{Math.floor(Math.random() * 60)+1}</span>
+          <span className={`${stateItemId === 2 ? '' : 'mesa-item-display-none'}`}>{Math.floor(Math.random() * 24) + 1}:{Math.floor(Math.random() * 60) + 1}</span>
         </div>
         <div className="mesa-item-details-capacity">
           <img src="/images/people.svg" className='mesa-item-icon' alt="MesaImg" />
@@ -31,5 +38,5 @@ export default function MesaItem({ id, price,capacity,stateItem }) {
         <button className='mesa-item-button'><img src="/images/money.svg" alt="money" /></button>
       </footer>
     </div>
-  )
+  );
 }

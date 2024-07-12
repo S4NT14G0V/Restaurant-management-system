@@ -30,9 +30,10 @@
     width: 100%;
     height: 100%;
     font-weight: 700;
+    transition: all 2s ease-in;
 }
 
-.mesa-item-info{
+.mesa-item-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,7 +41,7 @@
     gap: 10px;
 }
 
-.mesa-item-details{
+.mesa-item-details {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -50,14 +51,15 @@
     font-weight: 500;
 }
 
-.mesa-item-details-date, .mesa-item-details-capacity{
+.mesa-item-details-date,
+.mesa-item-details-capacity {
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 5px;
 }
 
-.mesa-item-details-capacity{
+.mesa-item-details-capacity {
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -72,7 +74,7 @@
     width: 20px;
 }
 
-.mesa-item-price{
+.mesa-item-price {
     font-size: 0.9rem;
     color: rgb(14, 124, 29);
     margin-bottom: 10px;
@@ -102,7 +104,7 @@
     transition: all 300ms;
 }
 
-.mesa-item-button:hover{
+.mesa-item-button:hover {
     background-color: rgba(255, 66, 4, 0.3);
     color: var(--buttons-hover);
     transform: scale(1.025);
@@ -117,44 +119,64 @@
     gap: 10px;
 }
 
-.mesa-item-state{
+.mesa-item-state {
     border-radius: 20px;
-    padding:  5px 15px;
+    padding: 5px 15px;
 }
 
-.mesa-item-0{
+.mesa-item-0 {
     border: 1px solid rgba(1, 179, 16, 0.7);
     background-color: rgba(1, 179, 16, 0.1);
     color: rgba(1, 156, 14, 0.8);
 }
 
-.mesa-item-1{
+.mesa-item-1 {
     border: 1px solid rgba(1, 93, 179, 0.7);
     background-color: rgba(1, 93, 179, 0.1);
     color: rgba(1, 93, 179, 0.8);
 }
 
-.mesa-item-2{
+.mesa-item-2 {
     border: 1px solid rgba(99, 1, 179, 0.7);
     background-color: rgba(99, 1, 179, 0.1);
     color: rgba(99, 1, 179, 0.8);
 }
 
-.mesa-item-details-date{
+.mesa-item-details-date {
     display: flex;
     flex-direction: row;
     width: fit-content;
 }
 
-.mesa-item-display-none{
+.mesa-item-display-none {
     display: none;
 }
 
-.mesa-item-display{
+.mesa-item-display {
     display: flex;
 }
 
-.mesa-separator{
+.mesa-separator {
     border-right: 1px solid rgba(99, 1, 179, 0.7);
     padding-right: 7px;
 }
+
+
+  .mesa-item {
+    /* Estilos base */
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  }
+  
+  .mesa-item.dragging {
+    /* Estilos cuando se está arrastrando */
+    opacity: 0.55;
+    transform: scale(0.95); /* Reducir ligeramente el tamaño durante el arrastre */
+    border: 2px dashed rgba(255, 66, 4, 0.35);
+  }
+  
+  .mesa-item.drag-over {
+    /* Estilos cuando se está sobre el elemento */
+    background-color: #f0f0f0;
+    
+  }
+  

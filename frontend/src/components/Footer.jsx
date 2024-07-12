@@ -2,12 +2,11 @@
 import React from 'react';
 import '../css/footer.css';
 
-const Footer = React.forwardRef((props, ref) => {
+export default function Footer() {
   return (
-    <footer className="global-footer" ref={ref}>
+    <footer className="global-footer">
       <h2>Made by: Names</h2>
     </footer>
   );
-});
+}
 
-export default Footer;
