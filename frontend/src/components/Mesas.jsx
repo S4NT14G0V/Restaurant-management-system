@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import MesaItem from "./MesaItem";
+import {apiUrls} from "../pages/ApiUrls"
 import '../css/mesas.css';
 
 export default function Mesas() {
@@ -42,6 +43,23 @@ export default function Mesas() {
     handleSort();
     setIsDragging(false);
   };
+
+  const fetchMesas = async () => {
+    try {
+      const response = await fetch(apiUrls.table.all); 
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setMesas(data);
+    } catch (error) {
+      console.error('Error fetching mesas:', error);
+    }
+  }
+
+  useEffect(() => {
+    fetchMesas();
+  }, []);
 
   return (
     <div className="mesas-menu">
